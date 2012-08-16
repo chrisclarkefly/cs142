@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title><%= yield (:title) %></title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+    <h3>
+    <table class="table" cellspacing="0"> 
+    <tr>
+     <th class="empty"></th>
+     <th class="word1">CS142</th>
+     <th  class="word2">HW4</th> 	
+     </tr>
+    </h3>
+</table>
+	<%= yield %>
+</body>
+</html>

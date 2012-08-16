@@ -1,0 +1,21 @@
+<% 
+   content_for :title, "Project 5: search"
+%>
+<div>
+<p>
+<% if (@matchingPhotos != nil && @matchingPhotos.length > 0) %>
+<br />
+Matching Photos:
+<% i=0 %>
+<% for photo in @matchingPhotos %>
+<p><%= i %>
+<% i= i+1 %> <p><%= photo %></p>
+<% end %>
+<% else %>
+No matching photos found with specified query
+<% end %>
+<% else %>
+Couldn't fetch values from "substring" query...
+<% end %>
+</p>
+</div>

@@ -1,0 +1,23 @@
+   <% if flash[:message] %>
+     <div class="error"><%= flash[:message] %></div>
+<% end %>
+   <% if !@user.nil? %>
+   <% if @user.errors.any? %>
+      <% @user.errors.full_messages.each do |msg| %>
+	<p><%= msg %></p>
+      <% end %>
+   <% end %>
+<% end %>
+<%= form_for(:user, :url => {:action => action}) do |f| %> 
+   <%= f.label label1 %> 
+   <%= f.text_field(name1) %>
+   <%= f.label label2 %> 
+   <%= f.text_field(name2) %>
+   <%= f.label label3 %> 
+   <%= f.text_field(name3) %>
+   <%= f.label label4 %> 
+   <%= f.password_field(name4) %>
+   <%= f.label label5 %> 
+   <%= f.password_field(name5) %>
+   <%= f.submit "Submit" %> 
+<% end %>

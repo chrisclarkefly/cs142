@@ -1,0 +1,8 @@
+<%
+  content_for :title,"Project 4: Photo"
+%>
+<div class="col1">
+<% if !session[:id].nil? %>
+<%= render :partial => "pic_form", :locals => {:action => :post_photo, :label1 => "Upload your photo" } %> 
+<% end %>
+</div><!--col1-->

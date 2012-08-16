@@ -1,0 +1,11 @@
+<%
+  content_for :title,"Project 4: Photo"
+  if flash[:message]
+%>
+<div class="error"><%= flash[:message] %></div>
+<% end %>
+<div class="col1">
+<% if !session[:id].nil? %>
+<%= render :partial => "pic_form", :locals => {:action => :post_photo, :label1 => "Upload your photo" } %> 
+<% end %>
+</div><!--col1-->

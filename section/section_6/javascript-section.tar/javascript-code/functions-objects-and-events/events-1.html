@@ -1,0 +1,59 @@
+<!--
+CS142 Javascript Section
+Anant Bhardwaj
+anantb@cs.stanford.edu
+-->
+<html>
+<head>
+<style>
+	
+ul {
+  list-style: none;
+}
+
+#target {
+  width: 406px;
+  text-align: center;
+  padding: 30px;
+  background-color:yellow;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+
+.menu {
+  text-align: center;
+  padding: 10px;
+  width:95px;
+  float:left;
+  background-color:#FFFEFE;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+</style>
+</head>
+
+<body>
+
+<ul>
+<li>
+<div id="target">
+</div>
+</li>
+<li class="menu" onmouseover="setText('Web Application');"> CS 142 </li>
+<li class="menu" onmouseover="setText('Introduction to Networks');"> CS 144 </li>
+<li class="menu" onmouseover="setText('Operating Systems');"> CS 140 </li>
+<li class="menu" onmouseover="setText('Introduction to HCI');"> CS 147 </li>
+</ul>
+
+<script type="text/javascript">
+	function setText(text) {
+	  var target = document.getElementById("target");
+	  target.innerHTML = "<h1>"+ text +"</h1>"; 
+	}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+p#paragraph1 { visibility: hidden; } 
+or
+p#paragraph1 { display: none; } 
+
+
+p#paragraph2 { background-color: purple; }
+
+for background:
+p#paragraph2 { background-image: url('Duck.jpg'); } 

@@ -1,0 +1,42 @@
+#div1 {
+  width: 400px;
+  text-align: center;
+  padding: 30px;
+  background-color:yellow;
+  border-width:1px;
+  border-color: black;
+  border-style: solid;
+}
+
+table {
+  #border-collapse: collapse;
+  border-style: solid;
+  border-color: #d0d0ff;
+}
+
+th, td {
+   padding-right: 10px;
+   padding-left: 10px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   border-style: solid;
+   border-color: #d0d0ff;
+   border: 2px solid white;
+   text-align: left;
+}
+
+th {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+  text-align: left;
+}
+
+td.dim{
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 13px;
+  color:gray;
+}
+
+

@@ -1,0 +1,27 @@
+<%
+  content_for :title, "Tabs"
+     tabs=[]
+     tab1= { :label=>"Inventory", :url=>"inventories"} 
+     tab2= { :label=>"Order Information", :url=>"orders"}
+     tab3= { :label=>"Accounts", :url=>"accounts"}
+     tab4= { :label=>"Shippers", :url=>"shippers"}
+     tab5= { :label=>"Suppliers", :url=>"suppliers"}
+     tabs.push(tab1, tab2, tab3, tab4, tab5)
+
+     tabs2=[]
+     tab2_1= { :label=>"Log Out", :url=>"log out"} 
+     tab2_2= { :label=>"Profile", :url=>"profile"}
+     tab2_3= { :label=>"Help", :url=>"help"}
+     tab2_4= { :label=>"Share", :url=>"share"}
+     tab2_5= { :label=>"News", :url=>"news"}
+     tabs2.push(tab2_1, tab2_2, tab2_3, tab2_4, tab2_5)
+
+     selected_tab = "Inventory"
+     selected_tab2= "Profile"
+%>
+  <div class="tab1">
+	  <%= render(:partial => "tabs", :locals=> {:tabs=>tabs, :selected=>selected_tab}) %> 
+  </div>
+  <div class="tab2">
+	  <%= render(:partial => "tabs", :locals=> {:tabs=>tabs2, :selected=>selected_tab2}) %> 
+  </div>  

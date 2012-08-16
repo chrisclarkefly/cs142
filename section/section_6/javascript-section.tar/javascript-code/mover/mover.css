@@ -1,0 +1,14 @@
+/**
+ * Credit: Fall 2010 CS142 Staff
+ */ 
+.mover {
+  border-style: double; 
+  border-color: green;
+  background-color:yellow;
+}
+
+.container {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}

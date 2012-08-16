@@ -1,0 +1,35 @@
+<%
+  content_for :title,"Project4:Users"
+%>
+<% if @photos.empty? then %>
+<p>No Photos<p>
+<% else %>
+<div class="list-title"><h1>Photos</h1></div>
+<table class="photos">
+<% for photo in @photos do %>
+<tr>
+<td>
+<div class="col1">
+<p><img src="/images/<%= photo.file_name %>" alt="/images/<%= photo.file_name %>" /></p>
+<div class="photo-date">
+<p><%= photo.date_time %></p>
+</div> <!--date--!>
+</div> <!---col1--!>
+</td>
+<td>
+<div class="col2">
+<% for comment in photo.comments do %> 
+<div class="comment">
+<div class="comment-date">
+<p><%= comment.date_time %></p>
+</div> <!---date--!>
+<p><a href= "<%= comment.user_id.to_s %>"><%= User.find(comment.user_id).first_name + " " + User.find(comment.user_id).last_name %></a></p>
+<p><%= comment.comment%></p>
+</div> <!--comment--!>
+<% end %>
+</div> <!--col2--!>
+</td>
+</tr>
+<% end %>
+</table
+<% end %>

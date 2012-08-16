@@ -1,0 +1,26 @@
+<%
+  content_for :title,"Project4:Users"
+%>
+<div class="background">
+<% if @users.empty? then %>
+<p>No Users</p>
+<% else %>
+<table class="list">
+<th><h1>Users</h1></th>
+<% for user in @users do %>
+<tr>
+<td><a href= "<%="user/" +  user.id.to_s %>"><%= user.first_name + " " + user.last_name %><a/></td>
+</tr>
+<% end %>
+</table>
+<% end %>
+</div> <!---background---!>
+<div class="first">
+<img src="/images/grey.jpg" />
+</div>
+<div class="second">
+<img src="/images/grey.jpg" />
+</div>
+<div class="third">
+<img src="/images/grey.jpg" />
+</div>

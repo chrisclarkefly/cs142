@@ -1,0 +1,57 @@
+<!--
+Author: Anant Bhardwaj
+Date: May 25, 2012
+
+CS142 Section for AJAX
+Marketting my Redprint project (really!!?)
+-->
+<html>
+<head>
+<title>Redprint Search</title>
+
+
+</head>
+<body>
+<h1>Redprint Search</h1>
+<hr />
+<div style="width:100%;">
+<input type="text" id="example-search-text-box" name="Redprint_Realtime_Search" value=""
+ style = "width:60%; height:25px; margin-bottom:20px; margin-top:30px;" 
+ onKeyUp="searchExamples(this.value)" />
+</div>
+<br />
+<div id="examples" style="margin-top:10px; margin-left:5px; padding:0px;">
+ 
+</div>
+  
+ <script type="text/javascript">
+//<![CDATA[
+
+function searchExamples(str){
+	if(str == null || str.length == 0 || str == "" ){
+		return;
+	}
+	if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+		this.xmlhttp_examples_search=new XMLHttpRequest();
+	}else{// code for IE6, IE5
+		xmlhttp_examples_search=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp_examples_search.onreadystatechange=function(){
+		if (xmlhttp_examples_search.readyState==4 && xmlhttp_examples_search.status==200){ 
+			if(xmlhttp_examples_search.responseText!=""){
+				document.getElementById("examples").innerHTML=xmlhttp_examples_search.responseText;
+			}else{
+				document.getElementById("examples").innerHTML="<b>Couln't find any relevant examples</b>";
+			}
+		}
+	}
+		
+	this.queryString = "q="+str;
+	xmlhttp_examples_search.open("GET","http://projects.abhardwaj.org/redprint-search/php/getexamples.php?"+queryString,true);
+	xmlhttp_examples_search.send();
+}
+//]]>
+</script>
+
+</body>
+</html>

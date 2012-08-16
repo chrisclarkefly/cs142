@@ -1,0 +1,149 @@
+.list {
+  float:left;
+  #font-size: 1.2em;
+  font-family:arial, veranda, sans-serif;
+  text-align: left;
+  padding-bottom: 0px;
+  color:#cc6600;
+  width:300px;
+  letter-spacing: -0.1em;
+  background-image: url('/images/WGR.jpg') ;
+  background-repeat: no-repeat;   
+  background-position: left top;
+  background-size: 100% 100%;
+  padding-bottom: 28px;
+}
+
+th {
+  font-size: 1.2em;
+  font-family:arial, veranda, sans-serif;
+  text-align: left;
+  padding-bottom: 0px;
+  color:#cc6600;
+  width:200px;
+  letter-spacing: -0.1em;
+  }
+
+a:link {
+  color :grey;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+a:visited {
+  font-weight: bold;
+  color: grey;
+}
+
+a:hover {
+  font-size: 1.05em;
+  color: #cc6600;
+  font-weight: bold;
+}
+
+a:active {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: black;
+  border-bottom: 1px solid;
+  border-style: none;
+  border-color: white;
+}
+
+table.photos{
+border-collapse:collapse;
+#border-style: solid;
+width=100%;
+margin-left: 0px;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-right: 0px;
+padding:0px;
+}
+
+tr {
+  background-image: url('/images/WGR.jpg') ;
+  background-repeat: no-repeat;   
+  background-position: left top;
+  background-size: 100% 100%;
+}
+
+.col1{
+  float:left;
+  #font-size: 1.2em;
+  font-family:arial, veranda, sans-serif;
+  text-align: left;
+  padding-top: 30px;
+  padding-left: 50px;
+  padding-right:20px;
+  margin-left: 20px;
+  color:#cc6600;
+  width:auto;
+  letter-spacing: -0.1em;
+}
+
+.col2{
+  float:right;
+  background-image: url('/images/WGR.jpg') ;
+  background-repeat: no-repeat;   
+  background-position: left top;
+  background-size: 100% 100%;
+  width=200px;
+  font-size: 1.2em;
+  font-family:arial, veranda, sans-serif;
+  text-align: left;
+  vertical-align:top;
+  color:#cc6600;
+}
+
+.comment {
+  background-image: url('/images/WGR.jpg') ;
+  background-repeat: no-repeat;   
+  background-position: left top;
+  background-size: 100% 100%;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.comment-date {
+  font-size: .5em;
+  font-family:arial, veranda, sans-serif;
+  text-align: left;
+  color:#cc6600;
+}
+
+.photo-date {
+  font-size: .8em;
+  font-family:arial, veranda, sans-serif;
+  text-align: left;
+  color:#cc6600;
+}
+
+.first {
+  float:left;
+  padding-top: 3px;
+  padding-left: 0px;
+  padding-right:0px;
+  margin-left: px;
+  width:auto;
+}
+.second {
+  float:left;
+  padding-top: 3px;
+  padding-left: 0px;
+  padding-right:0px;
+  margin-left: 0px;
+  width:auto;
+}
+.third {
+  float:right;
+  text-align: left;
+  padding-top: 3px;
+  padding-left: 0px;
+  padding-right:0px;
+  margin-left: 0px;
+  width:auto;
+  overflow:hidden;
+}

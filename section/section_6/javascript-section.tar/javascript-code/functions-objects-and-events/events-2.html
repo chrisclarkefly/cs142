@@ -1,0 +1,88 @@
+<!--
+CS142 Javascript Section
+Anant Bhardwaj
+anantb@cs.stanford.edu
+-->
+
+<html>
+<head>
+<style>
+	
+ul {
+  list-style: none;
+}
+
+#target {
+  width: 406px;
+  text-align: center;
+  padding: 30px;
+  background-color:yellow;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+
+.menu {
+  text-align: center;
+  padding: 10px;
+  width:95px;
+  float:left;
+  background-color:#FFFEFE;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+</style>
+</head>
+
+<body>
+
+<ul>
+<li>
+<div id="target">
+</div>
+</li>
+<li id="cs142"></li>
+<li id="cs144"></li>
+<li id="cs140"></li>
+<li id="cs147"></li>
+</ul>
+
+<script type="text/javascript">
+function TextSetter(element, target, text) {
+  this.target = document.getElementById(target);
+  this.element = document.getElementById(element);
+  this.element.className="menu";
+  this.element.innerHTML=text;
+  this.element.onmouseover = this.wrap(this, "mouseOver");
+  
+  // Why this doesn't work!!?
+  console.log(this);
+  /* 
+  this.element.onmouseover = function() {	
+    this.target.innerHTML = "<h1>"+ this.element.innerHTML+"</h1>";
+  }
+  */
+  
+}
+	
+	
+TextSetter.prototype.wrap = function(obj, method) {
+    return function(event) {
+        obj[method](event);
+    }
+}
+
+TextSetter.prototype.mouseOver = function(event) {
+    this.target.innerHTML = "<h1>"+ this.element.innerHTML+"</h1>"; 
+}
+
+new TextSetter("cs142", "target", "Web Applications");
+new TextSetter("cs144", "target", "Introduction to Networks");
+new TextSetter("cs140", "target", "Operating Systems");
+new TextSetter("cs147", "target", "Introduction to HCI");
+</script>
+
+
+</body>
+</html>

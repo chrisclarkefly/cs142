@@ -1,0 +1,98 @@
+<%
+  content_for :title,"Project4:User"
+if flash[:message]
+%>
+<div class="error"><%= flash[:message] %></div>
+<% end %>
+<% if !@tag.nil? %>
+<% if @tag.errors.any? %>
+<% @tag.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p> 
+<% end %>
+<% end %>
+<% end %>
+<% if @photos.empty? then %>
+<p>No Photos<p>
+<% if !session[:id].nil? %>
+<div class="link"><a href="../post_photo">Add New Photo</a></div>
+<% end %>
+<% else %>
+<div class="list-title"><h1>Photos</h1></div>
+<% if !session[:id].nil? %>
+<div class="link"><a href="../post_photo">Add New Photo</a></div>
+<% end %>
+<table class="photos">
+<% for photo in @photos do %>
+<% if !session["id"].nil?  %> 
+<div  id= "tag" class="link">
+<% $form_div = "tag_form" + photo.id.to_s
+   $image_div= "image" + photo.id.to_s
+   $tag_div  = "tag_rect" + photo.id.to_s
+   $x = "left_x"+ photo.id.to_s 
+   $y = "top_y"+ photo.id.to_s 
+   $w = "width"+ photo.id.to_s 
+   $h = "height"+ photo.id.to_s 
+%> 
+<tr><td><a  div onclick=" startTags('<%= $form_div %>', '<%= $image_div %>', '<%= $tag_div %>', '<%= $x %>', '<%= $y %>', '<%= $w %>', '<%= $h %>');" href="<%= '#image' + photo.id.to_s %>">Tag Photo</a></td></tr>
+</div><!--tag-->
+<div  id= "show_tags" class="link">
+<tr><td><a onclick="document.getElementById('<%= 'tag_parent' + photo.id.to_s %>').className = 'tag_parent';" href=<%= '#'+'image'+ photo.id.to_s %>> Show Tags</a></td></tr>                  
+<tr><td><a onclick="document.getElementById('<%= 'tag_parent' + photo.id.to_s %>').className = 'tag_parent_hidden';" href=<%= '#'+'image'+ photo.id.to_s %>>Don't Show Tags</a></td></tr>                  
+</div><!--show_tags-->
+<% end %>
+<tr>
+<td>
+<div class="col1">
+<%= render :partial => "tag_form", :locals => {:id=> "tag_form" + photo.id.to_s, :action => :post_tag, :label1 => "Select Users", :id1=>"left_x"+photo.id.to_s, :id2=> "top_y"+ photo.id.to_s, :id3=> "width"+photo.id.to_s, :id4=> "height"+photo.id.to_s, :hidden5=>"tag_photo_id", :hidden5_value=>photo.id.to_s, :name1=>"left_x", :name2=>"top_y", :name3=> "width", :name4=>"height"}  %> 
+<div id= "<%= 'image' + photo.id.to_s %>">
+<div id= "<%= 'tag_rect' + photo.id.to_s  %>"></div>
+<p><img src="/images/<%= photo.file_name %>" alt="/images/<%= photo.file_name %>" /></p>
+<% # loop through tags to display %> 
+<div id="<%= 'tag_parent' + photo.id.to_s %>" class="tag_parent_hidden">
+<% for tag in photo.tags do %>
+    <div id = "<%= 'tag' + tag.id.to_s  %>" class="tags"></div>
+    <script type= "text/javascript" src="/javascripts/tagger.js"></script> 
+    <script type="text/javascript">
+    //<![CDATA[
+	   new Tag ("<%= 'tag' + tag.id.to_s %>", "<%= 'image' + photo.id.to_s %>",  <%= tag.left_x %>, <%= tag.top_y %>, <%= tag.width %>, <%= tag.height %>, "<%= User.find(tag.user_id).first_name + " " + User.find(tag.user_id).last_name %>");
+    //]]>
+</script>
+<% end %>
+</div><!--tag+photo.id-->
+</div><!--imageX-->
+<div class="photo-date">
+<p><%= photo.date_time %></p>
+<% if !session["id"].nil?  %> 
+<div class="link">
+<p><a href=<%= '/../pics/comment/'+ photo.id.to_s %>>New Comment</a></p>
+</div><!--link-->
+<% end %>
+</div> <!--photo-date-->
+</div> <!---col1-->
+</td>
+<td>
+<div class="col2">
+<% for comment in photo.comments do %> 
+<div class="comment">
+<div class="comment-date">
+<p><%= comment.date_time %></p>
+</div> <!---date-->
+<p><a href= "<%= comment.user_id.to_s %>"><%= User.find(comment.user_id).first_name + " " + User.find(comment.user_id).last_name %></a></p>
+<p><%= comment.comment%></p>
+</div> <!--comment-->
+<% end %>
+</div> <!--col2-->
+</td>
+</tr>
+<% end %>
+</table>
+<% end %>
+<script type= "text/javascript" src="/javascripts/tagger.js"></script> 
+<script type="text/javascript">
+//<![CDATA[
+   function startTags(form_number, parent_id, feedback_div, x, y, width, height) {
+       document.getElementById(form_number).style.visibility = "visible";
+       new Tagger (parent_id, feedback_div, x, y, width, height); 
+   }
+//]]>
+</script>

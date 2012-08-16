@@ -1,0 +1,52 @@
+ body {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 13px;
+    color: black;
+    background: white;
+    margin: 20px;
+  }
+
+table {
+  border-collapse: collapse;
+}
+
+.heading{
+ color: white;
+ background: #687291; 
+ text-align: left;
+}
+
+th, td {
+  padding-right: 10px;
+   padding-left: 10px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   border-bottom: 2px solid white;
+}
+
+tr.row1{
+   color: black;
+   background: #eeeff2;
+}
+tr.row2{
+   color: black;
+   background: #dfe1e7;
+}
+table.frame{
+   background: white;
+}
+
+td.center{
+   text-align: center
+}
+td.left{
+   text-align: left
+   background: black;
+}
+td.left-small{
+   text-align: left
+   background: black;
+}
+tr.total{
+display: none;
+}

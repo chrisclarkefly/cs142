@@ -1,0 +1,53 @@
+ body {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 13px;
+    color: black;
+    background: white;
+    margin: 30px;
+  }
+
+table {
+  border-collapse: collapse;
+}
+
+.heading{
+ color: black;
+// text-align: left;
+ font-weight: bold;
+}
+
+th, td {
+ padding-right: 5px;
+ padding-left: 5px;
+ padding-top: 5px;
+}
+
+table.frame{
+   background: white;
+   padding: 20px;
+   border-style: solid;
+   border-width: 10px; 
+   border-color: #d0d0ff;
+   margin: 20px;
+}
+
+.center{
+   // width: 80px;
+   text-align: center;
+   padding: 5px;
+}
+.left{
+   // width: 100px;
+   text-align: left
+}
+
+.left-small{
+   //width: 40px;
+   text-align: left
+}
+
+tr.total{
+ font-weight: bold;
+ border-top: 2px solid black;
+}
+

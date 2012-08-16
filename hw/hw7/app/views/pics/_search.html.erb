@@ -1,0 +1,16 @@
+<% 
+   content_for :title, "Project 5: search"
+%>
+<div>
+<p>
+<% if (@matchingPhotos != nil && @matchingPhotos.length > 0) %>
+<br />
+Matching Photos:
+<% for photo in @matchingPhotos %>
+<p><a href="<%= "user/" + photo.user_id.to_s %>"><img src="<%= "/images/" + photo.file_name %>" width="60" height="50" border="0" alt="<%= "/images/" + photo.file_name %>"/></a></p>
+<% end %>
+<% else %>
+<p>No matching photos found with specified query</p>
+<% end %>
+</p>
+</div>

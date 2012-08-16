@@ -1,0 +1,5 @@
+<%
+  content_for :title,"Project 5:Users"
+%>
+<%= render :partial => "form_registration", :locals => {:action => :post_register, :label1 => "First Name", :name1 => "first_name", :label2=> "Last Name", :name2 => "last_name", :label3=>"User Name", :name3=>"login", :label4=>"Password", :name4 => "password", :label5=>"Confirm Password",:name5=>"password_confirmation"} %>
+

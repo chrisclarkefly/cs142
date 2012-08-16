@@ -1,0 +1,12 @@
+<%
+  content_for :title, "Filter States"
+%>
+<h1>Filtered States</h1>
+<% if @states.empty? then %>
+<p>No states found<p>
+<% else %>
+<h2>Here are the States</h2>
+<% for state in @states do %>
+<li><%= state %></li>
+    <% end %>
+<% end %>

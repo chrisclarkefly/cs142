@@ -1,0 +1,15 @@
+body {
+  color: black;
+}
+
+a{
+  color: green;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: blue;
+}

@@ -1,0 +1,43 @@
+.table{
+margin-left: 0px;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-right: 0px;
+padding:0px;
+}
+
+.word1 {
+  text-transform: uppercase;
+  font-size: 1.6em;
+  font-family:arial, veranda, sans-serif;
+  padding-bottom: 0px;
+  background:#cccccc;
+  color:#cc6600;
+  width:200px;
+  letter-spacing: -0.1em;
+  }
+
+.word2 {
+  text-transform: uppercase;
+  font-size: 1.6em;
+  font-family:arial, veranda, sans-serif;
+  padding-right:25px;
+  padding-left:25px;
+  padding-bottom: 0px;
+  background:#cccccc;
+  color:grey;
+  width:200px;
+  letter-spacing: -0.1em;
+  }
+
+th.empty {
+   width: 100%;
+   background:#cccccc;
+   text-align: center;
+   padding-bottom: 0px;
+   font-weight: normal;
+   white-space: nowrap;
+  }
+
+
+

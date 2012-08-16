@@ -1,0 +1,19 @@
+To pass validation (http://validator.w3.org/#validate_by_upload), do the following:
+
+1. missing closing tag:
+  <link rel="stylesheet" type="text/css" href="style1.css" media="screen">
+should be
+  <link rel="stylesheet" type="text/css" href="style1.css" media="screen" />
+
+2. no header
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+3. must be in a block element
+  <a href='http://cs142.stanford.edu/'>Class Homepage</a> 
+should be
+  <p>
+    <a href='http://cs142.stanford.edu/'>Class Homepage</a> 
+  </p>
+

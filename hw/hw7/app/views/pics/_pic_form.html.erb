@@ -1,0 +1,12 @@
+<% if !@photo.nil? %>
+<% if @photo.errors.any? %>
+	<% @photo.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+<% end %>
+<% end %>
+<%= form_for(:photo, :html =>{:multipart => true}, :url => {:action => action}) do |f| %>
+   <%= f.label label1 %>
+   <%= f.file_field(:photo) %>
+   <%= f.submit "Upload" %>
+<% end %>

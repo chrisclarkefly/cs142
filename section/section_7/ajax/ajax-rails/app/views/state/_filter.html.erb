@@ -1,0 +1,27 @@
+<!--
+# Author: Anant Bhardwaj
+# AJAX Based Filter
+# 
+# Created for CS142 Section
+#
+-->
+
+<% content_for :title, "Ajax Example" %>
+<div>
+<p>  
+<% if(@substr!=nil) %>   
+Query[substring]: <%= @substr %>
+<% if(@matchingstates!=nil && @matchingstates.length>0) %>
+<br /> 
+Matching States:
+<%= @matchingstates %>
+<% else %>
+No matching states found with the specified query string.
+<% end %>
+
+
+<% else %>
+Couldn't fetch values from "substring" query...	
+<% end %>
+</p>
+</div>

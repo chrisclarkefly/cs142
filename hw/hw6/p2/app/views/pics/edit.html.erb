@@ -1,0 +1,19 @@
+<%
+  content_for :title,"Project4:Comment"
+%>
+<% if @photo.nil? then %>
+<p>There is no photo by this ID<p>
+<% else %>
+<div class="list-title"><h1>Comments</h1></div>
+<div class="col1">
+<p><img src="/images/<%= @photo.file_name %>" alt="/images/<%= @photo.file_name %>" /></p>
+<div class="photo-date">
+<p><%= @photo.date_time %></p>
+</div> <!--date--!>
+</div> <!---col1--!>
+<div class="col2">
+<% if !session[:id].nil? %>
+<%= render :partial => "form", :locals => {:action => :post_comment, :label1 => "Enter comment", :name=>"comment"}  %> 
+<% end %>
+<% end %>
+</div><!--col2-->

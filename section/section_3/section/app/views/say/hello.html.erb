@@ -1,0 +1,6 @@
+<% @title = @message %>
+<p>Here is a greeting for you</p>
+<% @times.times do %>
+    <%= render :partial => "add_p",
+               :locals => {:message => @message} %>
+<% end %>

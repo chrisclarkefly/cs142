@@ -1,0 +1,10 @@
+   <table class="frame" cellspacing="0">
+     <tr class="tabs">
+        <% for i in 0...tabs.length %> 
+	    <th class = "empty"> </th>
+	    <th class = <% if selected==tabs[i][:label] %>  
+ "selected" <% else %>"left" <% end %>><a href="<%= tabs[i][:url] %>"><%= tabs[i][:label] %></a></th>
+       <%  end %>
+       <th class="empty_right"></th>
+     </tr>
+  </table>
